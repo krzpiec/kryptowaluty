@@ -1,0 +1,2 @@
+<input type="text" [value] = "inputText" (input) = setValueForSearching($event) placeholder="Enter currency name" #currencyName>
+<button (click)="passCurrencyNameToFind(currencyName.value)">Szukaj</button>
