@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {CardModule} from 'primeng/card';
-import { CurrencyCardComponent } from './currency-card.component';
 
-describe('CurrencyCardComponent', () => {
-  let component: CurrencyCardComponent;
-  let fixture: ComponentFixture<CurrencyCardComponent>;
+import { MarketsComponent } from './markets.component';
+
+describe('MarketsComponent', () => {
+  let component: MarketsComponent;
+  let fixture: ComponentFixture<MarketsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CurrencyCardComponent ]
+      declarations: [ MarketsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CurrencyCardComponent);
+    fixture = TestBed.createComponent(MarketsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,53 @@
+
+
+
+.p-card .p-card-title{
+  text-align: center;
+  color: black;
+  font-size: 40px !important;
+}
+.p-card .p-card-subtitle{
+  text-align: center;
+  color: black;
+  font-size: 30px !important;
+}
+
+.container{
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.p-card{
+  background-color: rgba($color: #807c7cd2, $alpha: 1.0);
+  box-shadow: 0 0 1em #000000d2;
+  width: 100%;
+
+}
+//!!!!!!!
+// .markets-button .p-button{
+//   background-color: yellowgreen !important;
+// }
+////!!!!!!!
+.p-card .p-button{
+
+  width: 100% !important;
+}
+
+
+.data{
+  width: 100%;
+color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+
+}
+.dataName{
+  color:red;
+}
+
+

@@ -24,7 +24,7 @@ export class ShowCurrencyDataComponent implements OnInit {
   @Input()
   currencyToFind: string ='';
 
-  selectedCurrency: Currency;
+  selectedCurrency!: Currency;
 
   constructor(private route: ActivatedRoute,
     private router: Router) {
@@ -37,6 +37,7 @@ export class ShowCurrencyDataComponent implements OnInit {
 
   rowSelected(event:any)
   {
+    console.log(this.selectedCurrency);
     this.router.navigate(['/currency', this.selectedCurrency.id]);
   }
   onRowUnselect(event:any)

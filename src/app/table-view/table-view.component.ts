@@ -12,7 +12,7 @@ export class TableViewComponent implements OnInit {
   currencyToFind:string ='';
 
   data: Array<Currency> = [];
-  
+
   constructor (private httpService : HttpServiceService){
 
   }
@@ -20,7 +20,7 @@ export class TableViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
+
 
   getPosts(){
     this.httpService.getPosts().subscribe((response:any) =>{
@@ -36,6 +36,16 @@ export class TableViewComponent implements OnInit {
   {
     this.currencyToFind = currencyName;
   }
+}
+export interface Marketplace{
+  exchangeId?:string,
+  baseId?:string,
+  quoteId?: string,
+  baseSymbol?: string,
+  quoteSymbol?: string,
+  volumeUsd24Hr?: string,
+  priceUsd?: string,
+  volumePercent?:string
 }
 export interface Currency{
   id?: string ;

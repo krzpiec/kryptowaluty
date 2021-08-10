@@ -1,5 +1,5 @@
  <p-table [columns]="cols" [value]="currencyData" [paginator]="true" [rows]="10"
- sortMode="multiple" selectionMode="single" [(selection)]="selectedCurrency" dataKey="code"
+ sortMode="multiple" selectionMode="single" [(selection)]="selectedCurrency" dataKey="id"
   (onRowSelect)="rowSelected($event)">
   <ng-template pTemplate="header" let-columns>
       <tr>
@@ -17,10 +17,10 @@
           <td>
             {{currency.priceUsd}}
         </td>
-        <td>
+        <td [ngClass]="currency.changePercent24Hr >0 ? 'greater' : 'lower'">
           {{currency.changePercent24Hr}}
         </td>
-        <td> <button> <a [routerLink]="['/currency', currency.id]"></a> buttonik</button></td>
+        <td> placeholder</td>
       </tr>
   </ng-template>
 </p-table>
