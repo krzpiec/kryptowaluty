@@ -18,6 +18,7 @@ export class TableViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getPosts();
   }
 
 
@@ -25,10 +26,7 @@ export class TableViewComponent implements OnInit {
   getPosts(){
     this.httpService.getPosts().subscribe((response:any) =>{
       this.data = response.data;
-      console.log('getPosts');
-     // console.log(response.data);
     });
-    //console.log(this.data.length);
   }
 
 
@@ -37,16 +35,7 @@ export class TableViewComponent implements OnInit {
     this.currencyToFind = currencyName;
   }
 }
-export interface Marketplace{
-  exchangeId?:string,
-  baseId?:string,
-  quoteId?: string,
-  baseSymbol?: string,
-  quoteSymbol?: string,
-  volumeUsd24Hr?: string,
-  priceUsd?: string,
-  volumePercent?:string
-}
+
 export interface Currency{
   id?: string ;
   rank?: number;

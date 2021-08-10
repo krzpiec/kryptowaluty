@@ -13,9 +13,9 @@ import { Currency } from '../table-view/table-view.component';
 export class ShowCurrencyDataComponent implements OnInit {
 
   cols: any[] =[
-  {header:'Nazwa', field:'nazwa'},
-  {header:'Cena', field:'cena'},
-  {header:'Zmiana', field:'zmiana'},
+  {header:'Nazwa', field:'id'},
+  {header:'Cena', field:'priceUsd'},
+  {header:'Zmiana', field:'changePercent24Hr'},
   {header:'Szczegoly', field:'szczegoly'},];
 
   @Input()

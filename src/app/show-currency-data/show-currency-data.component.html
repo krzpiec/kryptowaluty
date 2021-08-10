@@ -1,7 +1,10 @@
- <p-table [columns]="cols" [value]="currencyData" [paginator]="true" [rows]="10"
+ <p-table #dt1 [columns]="cols" [value]="currencyData" [paginator]="true" [rows]="10"
  sortMode="multiple" selectionMode="single" [(selection)]="selectedCurrency" dataKey="id"
-  (onRowSelect)="rowSelected($event)">
+  (onRowSelect)="rowSelected($event)" [globalFilterFields]="['id']">
   <ng-template pTemplate="header" let-columns>
+    <span class="p-input-icon-left p-ml-auto">
+      <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+  </span>
       <tr>
           <th *ngFor="let col of cols" [pSortableColumn]="col.field">
               {{col.header}}
@@ -10,15 +13,15 @@
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-currency >
-      <tr [pSelectableRow]='currencyData' >
+      <tr [pSelectableRow]='currency' >
           <td>
               {{currency.name}}
           </td>
           <td>
-            {{currency.priceUsd}}
+            {{currency.priceUsd | number:'1.3-4'}}
         </td>
         <td [ngClass]="currency.changePercent24Hr >0 ? 'greater' : 'lower'">
-          {{currency.changePercent24Hr}}
+          {{currency.changePercent24Hr | number:'1.3-4'}}
         </td>
         <td> placeholder</td>
       </tr>

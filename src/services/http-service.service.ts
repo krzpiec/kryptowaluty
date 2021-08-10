@@ -9,10 +9,20 @@ import { Observable } from 'rxjs';
 export class HttpServiceService {
 
   constructor(private http: HttpClient) { }
+  path:string = "https://api.coincap.io/v2/assets/";
 
+
+  getMarketPlace(id:any){
+    this.path = "https://api.coincap.io/v2/assets/";
+    this.path += id;
+    this.path += "/markets"
+    return this.http.get<any>(this.path);
+  }
   getItemById(id: any)
   {
-    return this.http.get<any>('https://api.coincap.io/v2/assets/bitcoin');
+    this.path = "https://api.coincap.io/v2/assets/";
+   this.path +=id;
+    return this.http.get<any>(this.path);
   }
 
   getPosts(): Observable<any> {

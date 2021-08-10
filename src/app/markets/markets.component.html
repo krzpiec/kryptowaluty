@@ -1,1 +1,24 @@
-<p>markets works!</p>
+<p-button class="go-back-button" (onClick)="goBackOnClick()">Back</p-button>
+<p-table [columns]="cols" [value]="marketTable" [paginator]="true" [rows]="10" sortMode="multiple">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+        <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-market >
+  <tr [pSelectableRow]='market' >
+      <td>
+          {{market.exchangeId}}
+      </td>
+      <td>
+        {{market.quoteId}}
+    </td>
+    <td>
+      {{market.priceUsd | number:'1.3-4'}}
+    </td>
+  </tr>
+</ng-template>
+</p-table>
